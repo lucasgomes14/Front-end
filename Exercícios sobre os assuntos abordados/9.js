@@ -10,3 +10,30 @@
  * No caso de a nota ser 38, o arredondamento é possível pois atingirá 40 e o aluno será aprovado.
  *  
 */
+console.log(100 % 5);
+
+function notas(nota) {
+	let notaNova = arredondar(nota);
+	
+	if(notaNova >= 40)
+		console.log(`Aprovado com nota ${notaNova}`);
+	else
+		console.log(`Reprovado com nota ${notaNova}`);
+}
+
+function arredondar(notaNaoArredondada) {
+	if(notaNaoArredondada % 5 >= 3) {
+		if(notaNaoArredondada % 5 == 3)
+			return notaNaoArredondada + 2;
+		else
+			return notaNaoArredondada + 3;
+	} else 
+		return notaNaoArredondada;
+}
+
+notas(100)
+notas(30)
+notas(38)
+notas(88)
+notas(61)
+notas(37)
